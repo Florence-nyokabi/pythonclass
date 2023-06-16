@@ -47,7 +47,8 @@ class Account:
             return "Loan amount requested is more than 1/3 of your total deposits"
         else:
             self.loan_balance += amount
-            return f"Your loan of ${amount} was successful. Your new loan balance is ${self.loan_balance}"
+            self.balance += amount
+            return f"Your loan of ${amount} was successful. Your new account balance is ${self.balance}"
     def repay_loan(self, amount):
         if amount > self.loan_balance:
             self.balance += amount - self.loan_balance
